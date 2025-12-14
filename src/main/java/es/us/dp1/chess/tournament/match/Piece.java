@@ -1,0 +1,40 @@
+package es.us.dp1.chess.tournament.match;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import es.us.dp1.chess.tournament.model.BaseEntity;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+public class Piece extends BaseEntity implements Cloneable{
+
+
+    @OneToOne
+    Position position;
+
+    @ManyToOne()
+    @JsonIgnore
+    ChessBoard board;
+
+    @ManyToOne()
+    private PieceType type;
+
+    @Enumerated(EnumType.STRING)
+    PieceColor color;
+
+    Boolean captured;
+
+    public Piece clone() {
+        Piece piece = new Piece();
+        piece.setPosition(this.getPosition());
+        //piece.setYPosition(this.getYPosition());
+        piece.setType(this.getType());
+        piece.setColor(this.getColor());
+        return piece;
+    }
+
+
+}
