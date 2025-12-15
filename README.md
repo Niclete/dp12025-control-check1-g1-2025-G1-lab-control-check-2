@@ -250,7 +250,7 @@ El controlador debe usar GameAnalysisService para obtener todos los datos necesa
   "gameId": 5,
   "event": "European Rapid Championship 2025",
   "players": ["player3", "player12"],
-  "aiAgent": {"name":"...","type":"...",..},   // puede ser nulo
+  "aiAgent": {"name":"...","type":"...",...},   // puede ser nulo
   "evaluations": [                          // puede estar vacío
     {"opeingAidGrade": 2, "midGameAidGrade": 4, "endGameAidGrade": 7,...},
     ...
