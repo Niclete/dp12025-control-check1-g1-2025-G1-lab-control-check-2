@@ -197,7 +197,7 @@ url: https://www.ibm.com/history/deep-blue
 type: ExpertSystem
 costPerMatch: 0.5
 ```
-El agente debe estar asociado a las partidas 5.
+El agente debe estar asociado a las partida con id = 5.
 
 
 
@@ -222,7 +222,7 @@ endGameAidGrade: 3
 ```
 Asociada con la partida con id = 5 y el usuario con id = 4
 
-#### EngineEval 2
+#### AIAgentEval 2
 ```text
 id: 2
 openingAidGrade: 9
