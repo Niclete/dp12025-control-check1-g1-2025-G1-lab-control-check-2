@@ -319,7 +319,8 @@ AIAgentType recommendAIAgentForUser(Integer userId);
  Concretamente, se supone que si en el conjunto de partidas del jugador, ha ganado las mismas o más de las que ha perdido no se genera ninguna recomendación el  tipo de IA devuelto sera `null`. Si el usuario ha ganado entre un `49.9%` y un `15%` de las partidas jugadas se le recomienda una  IA básica basada en reglas `RULE_BASED_SYSTEM`. Si el jugador gana menos el `15%` de las partidas jugadas, el tipo de IA recomendada sera `EXPERT_SYSTEM`.
 Si el usuario no ha jugado niguna partida se le recomienda el entrenamiento de tipo `LARGE_LANGUAGE_MODEL` para iniciarse en el ajedrez.
 Si el usuario tiene partidas sin ganador todavía, se considerarán perdidas (aunque el ganador sea null).
-Su prueba debe ser capaz de comprobar el comportamiento y fallar para las implementaciones incorrectas del algoritmo (hay al menos una correcta). Para ello debe completar la clase `IARecommendationAlgorithmTest`.
+Su prueba debe ser capaz de comprobar el comportamiento y fallar para las implementaciones incorrectas del algoritmo (hay al menos una correcta). 
+Para ello **debe completar la clase `IARecommendationAlgorithmTest` creando tests unitarios** para el algoritmo que se tiene como atributo, **debe validar que el algoritmo tiene el comportamiento descrito arriba**.
 Recuerde que la prueba de ejecutarse sin hacer uso de mocks, ni Spring (`@DataJpaTest`, `@SpringBootTest`, etc.).
 
 Además los métodos anotados con `@Test` que cree deben ser sin parámetros.
