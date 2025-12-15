@@ -15,7 +15,7 @@ import es.us.dp1.chess.tournament.user.User;
 public interface GameAnalysisRepository extends CrudRepository<ChessMatch, Integer> {
 
     @Query("select u from User u ")
-    List<User> findFastestWinners(
+    List<User> findMostWinners(
             @Param("federations") Set<Federation> federations,
             @Param("from") LocalDateTime from
         );
