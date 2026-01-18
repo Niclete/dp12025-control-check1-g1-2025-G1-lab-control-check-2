@@ -14,7 +14,17 @@ import es.us.dp1.chess.tournament.user.User;
 
 public interface GameAnalysisRepository extends CrudRepository<ChessMatch, Integer> {
 
-    @Query("select u from User u ")
+    @Query("""
+    select u
+    from Federation f
+    join f.organizedEvents e
+    join e.matches m
+    join m.winner u
+    where f in :federations
+      and m.start >= :from
+    group by u
+    order by count(m) desc, u.id asc
+""")
     List<User> findMostWinners(
             @Param("federations") Set<Federation> federations,
             @Param("from") LocalDateTime from

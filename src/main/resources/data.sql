@@ -210,3 +210,17 @@ INSERT INTO chess_event_matches (chess_event_id, matches_id) VALUES
     (202, 304),
     (203, 305),
     (201, 306);
+
+-- ==========================================================
+-- DATA FOR EXERCISE 5 (AI AGENT EVALUATION QUERY)
+INSERT INTO aiagent (id, name, url, type, cost_per_match) VALUES
+    (1, 'DeepBlue', 'https://www.ibm.com/history/deep-blue', 'EXPERT_SYSTEM', 0.5),
+    (2, 'StockFish', 'https://stockfishchess.org', 'RULE_BASED_SYSTEM', 0.0);
+
+INSERT INTO aiagent_matches (aiagent_id, matches_id) VALUES
+    (1, 5),
+    (2, 6);
+
+INSERT INTO aiagent_evaluation (id, opeing_aid_grade, mid_game_aid_grade, end_game_aid_grade, match_id, aided_user_id) VALUES
+    (1, 6, 8, 3, 5, 4),
+    (2, 9, 6, 8, 5, 5);
